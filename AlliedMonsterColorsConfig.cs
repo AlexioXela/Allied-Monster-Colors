@@ -35,7 +35,7 @@ class AlliedMonsterColorsConfig
     {
         _enableAlliedMonsterColors = config.Bind("General", "EnableAlliedMonsterColors", true, "Enables/Disables the entire mod.");
         _recolorTint = config.Bind("General", "RecolorTint", Color.green, "Sets the new color for the selected entities.");
-        _recolorBrightness = config.Bind("General", "RecolorBrightness", 0.5f, "Sets the recolor brightness for the selected entities.");
+        _recolorBrightness = config.Bind("General", "RecolorBrightness", 0.5f, "Sets the recolor brightness for the selected entities. (Setting to 0.0 makes the recolor not visible.)");
         _recolorAlliedBeetles = config.Bind("General", "RecolorAlliedBeetles", true, "Maybe you think most allied monsters look fine, but just the Queen's Gland Beetle Guards look too similar? This option only colors the Queen's Gland spawns.");
         _recolorAlliedMonsters = config.Bind("General", "RecolorAlliedMonsters", true, "Recolors allied monsters (e.g. Happiest Mask ghosts).");
         _recolorAlliedNonmonsters = config.Bind("General", "RecolorAlliedNonmonsters", false,

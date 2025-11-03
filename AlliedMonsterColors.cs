@@ -96,7 +96,7 @@ namespace AlliedMonsterColors
             if (characterModel.body.name.ToLower().Contains("gummy") && !_config.RecolorAlliedNonmonsters) return; //Don't recolor if they're goobo if the config says not to
 
             if (characterModel.body.isPlayerControlled && !_config.RecolorAlliedPlayers && //Don't recolor if they're player controlled if the config says not to...
-                characterModel.body.master != PlayerCharacterMasterController.instances[0].master) return; //...unless it's the user (as that is handled by a different config)
+                characterModel.body.master != LocalUserManager.GetFirstLocalUser().cachedMaster) return; //...unless it's the user (as that is handled by a different config)
             
             string characterName = characterModel.body.name.ToLower();
             
@@ -105,7 +105,7 @@ namespace AlliedMonsterColors
             if (!(characterName.Contains("drone") || characterName.Contains("turret")) && !characterModel.body.isPlayerControlled && !_config.RecolorAlliedMonsters //don't color monsters if the config says not to
                 && (characterName != "beetleguardallybody(clone)" || !_config.RecolorAlliedBeetles)) return; //Unless it's a beetle guard and the config says to recolor
             
-            if (characterModel.body.master == PlayerCharacterMasterController.instances[0].master && //don't recolor if the character is the user...
+            if (characterModel.body.master == LocalUserManager.GetFirstLocalUser().cachedMaster && //don't recolor if the character is the user...
                 !_config.RecolorSelf) return; //...if the config says not to
             
             AddOverlay(colorMaterial); 

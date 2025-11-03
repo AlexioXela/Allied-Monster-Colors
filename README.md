@@ -22,3 +22,5 @@ A Risk of Rain 2 mod to recolor allied units so they're easier to see, especiall
 This mod has not been tested extensively yet. It hasn't been tested whatsoever for compatibility with other mods, though I'd like to think it should play nice with other mods.
 
 I dabble in programming, but I don't really know what I'm doing. I made this project partially to practice programming/GitHub, and partially because modding is fun. And because those allied beetle guards look a little too close to the enemy beetle guards and I'm tired of shooting them. Feel free to submit an issue if you have a solution to a known issue, you have an issue not listed in the known issues, or if I've inadvertently done anything else problematic with this respository.
+
+This mod is available at https://thunderstore.io/package/AlexioXela/AlliedMonsterColors/
