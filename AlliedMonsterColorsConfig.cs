@@ -20,8 +20,6 @@ class AlliedMonsterColorsConfig
     private readonly ConfigEntry<bool> _recolorAlliedPlayers;
     private readonly ConfigEntry<bool> _recolorSelf;
 
-    public static int configUpdateCount = 0; //this is probably a terrible way to handle the configUpdateCount
-    
     public bool EnableAlliedMonsterColors { get => _enableAlliedMonsterColors.Value; }
     public Color RecolorTint { get => _recolorTint.Value; }
     public float RecolorBrightness { get => _recolorBrightness.Value; }
@@ -65,10 +63,10 @@ class AlliedMonsterColorsConfig
         
         ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(_enableAlliedMonsterColors, new CheckBoxConfig() { description = "Enables/Disables the entire mod." }));
         ModSettingsManager.AddOption(new RiskOfOptions.Options.ColorOption(_recolorTint, new ColorOptionConfig() { description="Sets the new color for the selected entities." }));
-        ModSettingsManager.AddOption(new RiskOfOptions.Options.SliderOption(_recolorBrightness, new SliderConfig() { min = 0.0f, max = 20f , FormatString = "{0:0.0}", description = "Sets the recolor brightness for the selected entities."}));
-        ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(_recolorAlliedBeetles, new CheckBoxConfig() { description = "Maybe you think most allied monsters look fine, but just the Queen's Gland Beetle Guards look too similar? This option only colors the Queen's Gland spawns.\"" }));
+        ModSettingsManager.AddOption(new RiskOfOptions.Options.SliderOption(_recolorBrightness, new SliderConfig() { min = 0.1f, max = 20f , FormatString = "{0:0.0}", description = "Sets the recolor brightness for the selected entities."}));
+        ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(_recolorAlliedBeetles, new CheckBoxConfig() { description = "Maybe you think most allied monsters look fine, but just the Queen's Gland Beetle Guards look too similar? This option only colors the Queen's Gland spawns." }));
         ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(_recolorAlliedMonsters, new CheckBoxConfig() { description = "Recolors allied monsters (e.g. Happiest Mask ghosts)." }));
-        ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(_recolorAlliedNonmonsters, new CheckBoxConfig() { description = "Recolors allied non-monsters (i.e. turrets/drones)." }));
+        ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(_recolorAlliedNonmonsters, new CheckBoxConfig() { description = "Recolors allied drones/turrets." }));
         ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(_recolorAlliedPlayers, new CheckBoxConfig() { description = "Recolors allied players (if playing multiplayer)." }));
         ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(_recolorSelf, new CheckBoxConfig() { description = "Recolors self (since you are your own ally, I suppose)." }));
         

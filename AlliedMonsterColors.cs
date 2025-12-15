@@ -20,7 +20,7 @@ namespace AlliedMonsterColors
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "Alexio_Xela";
         public const string PluginName = "AlliedMonsterColors";
-        public const string PluginVersion = "0.1.1";
+        public const string PluginVersion = "1.0.1";
 
         public static Material colorMaterial;
         private static AlliedMonsterColorsConfig _config;
@@ -100,10 +100,10 @@ namespace AlliedMonsterColors
             
             string characterName = characterModel.body.name.ToLower();
             
-            if ((characterName.Contains("drone") || characterName.Contains("turret")) && !_config.RecolorAlliedNonmonsters) return; //don't color drones/turrets if the config says not to
+            if ((characterName.Contains("drone") || characterName.Contains("turret") || characterName=="crosshairs" || characterName=="doc" || characterName=="chirp") && !_config.RecolorAlliedNonmonsters) return; //don't color drones/turrets if the config says not to
             
-            if (!(characterName.Contains("drone") || characterName.Contains("turret")) && !characterModel.body.isPlayerControlled && !_config.RecolorAlliedMonsters //don't color monsters if the config says not to
-                && (characterName != "beetleguardallybody(clone)" || !_config.RecolorAlliedBeetles)) return; //Unless it's a beetle guard and the config says to recolor
+            if (!(characterName.Contains("drone") || characterName.Contains("turret") || characterName=="crosshairs" || characterName=="doc" || characterName=="chirp") && !characterModel.body.isPlayerControlled && !_config.RecolorAlliedMonsters //don't color monsters if the config says not to
+                 && (characterName != "beetleguardallybody(clone)" || !_config.RecolorAlliedBeetles)) return; //Unless it's a beetle guard and the config says to recolor
             
             if (characterModel.body.master == LocalUserManager.GetFirstLocalUser().cachedMaster && //don't recolor if the character is the user...
                 !_config.RecolorSelf) return; //...if the config says not to
